@@ -7,6 +7,7 @@ const connection = new Connection("https://devnet.genesysgo.net/");
 const mnemonic =
   "pill tomorrow foster begin walnut borrow virtual kick shift mutual shoe scatter";
 const seed = bip39.mnemonicToSeedSync(mnemonic, ""); // (mnemonic, password)
+// creating keypair
 const keypair = Keypair.fromSeed(seed.slice(0, 32));
 
 (async () => {
@@ -35,7 +36,7 @@ const keypair = Keypair.fromSeed(seed.slice(0, 32));
       console.log('SIGNATURE', signature)
   })();
 
-  
+
 // let balance =  connection.getBalance(keypair.publicKey);
 // console.log(`${balance / LAMPORTS_PER_SOL} SOL`);
 // console.log(keypair);
