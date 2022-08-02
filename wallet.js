@@ -3,17 +3,20 @@ const bip39= require("bip39")
 const {Keypair, LAMPORTS_PER_SOL,Transaction, SystemProgram,sendAndConfirmTransaction} = require("@solana/web3.js");
 const {createMint,getMint,getOrCreateAssociatedTokenAccount,mintTo,getAccount}= require('@solana/spl-token')
 const connection = require('./connection')
-// connection
+
 
 const mnemonic =
   "pill tomorrow foster begin walnut borrow virtual kick shift mutual shoe scatter";
 const seed = bip39.mnemonicToSeedSync(mnemonic, ""); // (mnemonic, password)
+
 // creating keypair
 const keypair = Keypair.fromSeed(seed.slice(0, 32));
 
 (async () => {
+
     // getting balnace of created account 
     let balance = await connection.getBalance(keypair.publicKey);
+
     // account public key to which solana is to transfer
     let to='HBTH6GzLAqHYZKiDsHnf3FvUWPXhzY1rEBdBU3YpEvfF'
     console.log(`${balance / LAMPORTS_PER_SOL} SOL`);
@@ -39,24 +42,20 @@ const keypair = Keypair.fromSeed(seed.slice(0, 32));
 
     // spl token creation sript
     // create spl token
-
-    const mint = await createMint(
+      const mint = await createMint(
       connection,
       keypair,
       keypair.publicKey,
       keypair.publicKey,
       9 // We are using 9 to match the CLI decimal default exactly
     );
-    
     console.log('token identifer ',mint.toBase58());
 
     //get mint info 
-
     const mintInfo = await getMint(
       connection,
       mint
     )
-    
     console.log('inital supply',mintInfo.supply);
 
     // create account for token
@@ -74,7 +73,6 @@ const keypair = Keypair.fromSeed(seed.slice(0, 32));
       connection,
       tokenAccount.address
     )
-    
     console.log('token account info',tokenAccountInfo.amount);
 
 

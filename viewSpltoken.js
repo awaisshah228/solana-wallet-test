@@ -3,7 +3,10 @@ const {PublicKey} = require("@solana/web3.js") ;
 
 
 (async () => {
+  // connection
   const connection = require('./connection')
+
+  // get token hold by account
   const tokenAccounts = await connection.getTokenAccountsByOwner(
     new PublicKey('5ZWj7a1f8tWkjBESHKgrLmXshuXxqeY9SYcfbshpAqPG'),
     {
@@ -13,6 +16,8 @@ const {PublicKey} = require("@solana/web3.js") ;
 
   console.log("Token                                         Balance");
   console.log("------------------------------------------------------------");
+
+  // iterate over all spl token hold by wallet
   tokenAccounts.value.forEach((e) => {
     const accountInfo = AccountLayout.decode(e.account.data);
     console.log(`${new PublicKey(accountInfo.mint)}   ${accountInfo.amount}`);
