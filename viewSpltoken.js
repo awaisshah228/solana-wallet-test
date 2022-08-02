@@ -1,5 +1,5 @@
 const{AccountLayout, TOKEN_PROGRAM_ID} = require ("@solana/spl-token");
-const {clusterApiUrl, Connection, PublicKey} = require("@solana/web3.js") ;
+const {PublicKey} = require("@solana/web3.js") ;
 
 
 (async () => {

@@ -1,6 +1,6 @@
 //imports 
 const bip39= require("bip39")
-const {Connection, Keypair, LAMPORTS_PER_SOL,Transaction, SystemProgram,sendAndConfirmTransaction} = require("@solana/web3.js");
+const {Keypair, LAMPORTS_PER_SOL,Transaction, SystemProgram,sendAndConfirmTransaction} = require("@solana/web3.js");
 const {createMint,getMint,getOrCreateAssociatedTokenAccount,mintTo,getAccount}= require('@solana/spl-token')
 const connection = require('./connection')
 // connection
