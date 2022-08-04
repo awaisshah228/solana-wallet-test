@@ -4,8 +4,8 @@
   "description": "",
   "main": "wallet.js",
   "scripts": {
-    "wallet" :"nodemon wallet.js",
-    "view" :"nodemon viewSpltoken.js"
+    "wallet": "nodemon wallet.js",
+    "view": "nodemon viewSpltoken.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,12 @@
   "dependencies": {
     "@solana/spl-token": "^0.2.0",
     "@solana/web3.js": "^1.50.1",
-    "bip39": "^3.0.4"
+    "axios": "^0.27.2",
+    "bip32": "^3.0.1",
+    "bip39": "^3.0.4",
+    "bitcoinjs-lib": "^6.0.2",
+    "bitcore-lib": "^8.25.35",
+    "tiny-secp256k1": "^2.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
