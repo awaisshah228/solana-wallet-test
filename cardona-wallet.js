@@ -7,3 +7,5 @@ let passphrase = 'tangocrypto';
 let name = 'tangocrypto-wallet';
     
 let wallet = await walletServer.createOrRestoreShelleyWallet(name, mnemonic_sentence, passphrase);
+
+console.log(wallet);

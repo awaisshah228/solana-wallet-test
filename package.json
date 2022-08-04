@@ -18,6 +18,7 @@
     "bip39": "^3.0.4",
     "bitcoinjs-lib": "^6.0.2",
     "bitcore-lib": "^8.25.35",
+    "cardano-wallet-js": "^1.4.0",
     "tiny-secp256k1": "^2.2.1"
   },
   "devDependencies": {
